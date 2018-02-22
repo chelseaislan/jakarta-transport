@@ -1,0 +1,670 @@
+<html>
+	<head>
+		<title>KRL Commuter Line</title>
+		<link rel="stylesheet" type="text/css" href="css.css" />
+		<script src="krlsatu.js"></script>
+		<script src="https://www.bing.com/api/maps/mapcontrol?key=ApcmRC0egf-STWmxca1cVWsOdxrXKzuyQB5o_3Cz-9gQJzrpQeSPOvIZ8UStR3Fw&callback=loadMapScenario" async defer"></script>
+	</head>
+	<body class="krl" onload="loadMapScenario();">
+			<nav id="primary_nav_wrap">
+				<ul>
+					<li><a href="homepage.html">HOME</a>
+					<li><a href="#">KRL COMMUTER LINE</a>
+						<ul>
+							<li><a href="krl1.html">1. X</a></li>
+							<li><a href="krl2.html">2. X</a></li>
+							<li><a href="krl3.html">3. Bogor - Angke</a></li>
+							<li><a href="krl4.html">4. X</a></li>
+							<li><a href="krl5.html">5. X</a></li>
+						</ul>
+					<li><a href="#">TRANSJAKARTA BRT</a>
+						<ul>
+							<li><a href="#">1. Blok M - Kota</a></li>
+							<li><a href="#">X</a></li>
+							<li><a href="#">X</a></li>
+							<li><a href="#">X</a></li>
+						</ul>
+					<li><a href="#">TIPS & TRICKS</a></li>
+					<li><a href="#">DISCLAIMER</a></li>
+					<li><a href="#">ABOUT US</a></li>
+    			</ul>
+			</nav>
+			<h1 class="a">BOGOR - ANGKE Commuter Line</h1>
+			<h3 class="departure">select departure station:</h3>
+			<p>Transit: Transit to another KRL line | TJ: Transfer to Transjakarta BRT | Term: End station</p>
+			<button class="button" id="btn1" onclick="stabogor()"  >BOGOR (Term)</button>
+			<button class="button" id="btn2" onclick="stabojong()">BOJONG GEDE</button>
+			<button class="button" id="btn3" onclick="stadepok()">DEPOK BARU</button>
+			<button class="button" id="btn4" onclick="staui()">UNIVERSITAS INDONESIA</button>
+			<button class="button" id="btn5" onclick="stamgrai()">MANGGARAI (Transit, TJ)</button>
+			<button class="button" id="btn6" onclick="stasud()">SUDIRMAN (TJ)</button>
+			<button class="button" id="btn7" onclick="stanabang()">TANAH ABANG (Transit, TJ)</button>
+			<button class="button" id="btn8" onclick="staduri()">DURI (Transit)</button>
+			<button class="button" id="btn9" onclick="stangke()">ANGKE (Term)</button>
+
+			<div id="printoutPanel"></div>
+        	<div id="myMap"></div>
+
+			<table id="schedule1"> <!--Bogor-->
+				<tr>
+					<td colspan="2">From BOGOR</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>04:40</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>05:42</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>06:45</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>08:44</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>09:43</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>11:05</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>12:30</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>13:53</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>15:10</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>16:25</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>17:40</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>18:38</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>19:32</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>22:28</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule2"> <!--Bojong Gede-->
+				<tr>
+					<td colspan="2">From BOJONG GEDE</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:18</td>
+					<td>06:03</td>
+				</tr>
+				<tr>
+					<td>06:16</td>
+					<td>07:03</td>
+				</tr>
+				<tr>
+					<td>07:15</td>
+					<td>08:02</td>
+				</tr>
+				<tr>
+					<td>09:16</td>
+					<td>10:06</td>
+				</tr>
+				<tr>
+					<td>10:09</td>
+					<td>11:02</td>
+				</tr>
+				<tr>
+					<td>11:43</td>
+					<td>12:31</td>
+				</tr>
+				<tr>
+					<td>13:02</td>
+					<td>13:47</td>
+				</tr>
+				<tr>
+					<td>14:40</td>
+					<td>15:27</td>
+				</tr>
+				<tr>
+					<td>15:44</td>
+					<td>16:38</td>
+				</tr>
+				<tr>
+					<td>16:56</td>
+					<td>18:02</td>
+				</tr>
+				<tr>
+					<td>18:08</td>
+					<td>19:02</td>
+				</tr>
+				<tr>
+					<td>19:05</td>
+					<td>20:03</td>
+				</tr>
+				<tr>
+					<td>19:58</td>
+					<td>20:43</td>
+				</tr>
+				<tr>
+					<td>22:54</td>
+					<td>23:46</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule3"> <!--Depok Baru-->
+				<tr>
+					<td colspan="2">From DEPOK BARU</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:22</td>
+					<td>05:54</td>
+				</tr>
+				<tr>
+					<td>06:20</td>
+					<td>06:53</td>
+				</tr>
+				<tr>
+					<td>07:19</td>
+					<td>07:53</td>
+				</tr>
+				<tr>
+					<td>09:20</td>
+					<td>09:57</td>
+				</tr>
+				<tr>
+					<td>10:13</td>
+					<td>10:52</td>
+				</tr>
+				<tr>
+					<td>11:47</td>
+					<td>12:22</td>
+				</tr>
+				<tr>
+					<td>13:06</td>
+					<td>13:38</td>
+				</tr>
+				<tr>
+					<td>14:44</td>
+					<td>15:18</td>
+				</tr>
+				<tr>
+					<td>15:48</td>
+					<td>16:29</td>
+				</tr>
+				<tr>
+					<td>17:00</td>
+					<td>17:53</td>
+				</tr>
+				<tr>
+					<td>18:12</td>
+					<td>18:53</td>
+				</tr>
+				<tr>
+					<td>19:09</td>
+					<td>19:54</td>
+				</tr>
+				<tr>
+					<td>20:02</td>
+					<td>20:34</td>
+				</tr>
+				<tr>
+					<td>22:58</td>
+					<td>23:37</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule4"> <!--UI-->
+				<tr>
+					<td colspan="2">From UNIV. INDONESIA</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:30</td>
+					<td>05:50</td>
+				</tr>
+				<tr>
+					<td>06:28</td>
+					<td>06:49</td>
+				</tr>
+				<tr>
+					<td>07:27</td>
+					<td>07:48</td>
+				</tr>
+				<tr>
+					<td>09:34</td>
+					<td>09:53</td>
+				</tr>
+				<tr>
+					<td>10:27</td>
+					<td>10:48</td>
+				</tr>
+				<tr>
+					<td>11:55</td>
+					<td>12:18</td>
+				</tr>
+				<tr>
+					<td>13:14</td>
+					<td>13:34</td>
+				</tr>
+				<tr>
+					<td>14:52</td>
+					<td>15:14</td>
+				</tr>
+				<tr>
+					<td>16:07</td>
+					<td>16:25</td>
+				</tr>
+				<tr>
+					<td>17:13</td>
+					<td>17:49</td>
+				</tr>
+				<tr>
+					<td>18:25</td>
+					<td>18:49</td>
+				</tr>
+				<tr>
+					<td>19:22</td>
+					<td>19:49</td>
+				</tr>
+				<tr>
+					<td>20:10</td>
+					<td>20:30</td>
+				</tr>
+				<tr>
+					<td>23:06</td>
+					<td>23:33</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule5"> <!--Manggarai-->
+				<tr>
+					<td colspan="2">From MANGGARAI</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:44</td>
+					<td>05:44</td>
+				</tr>
+				<tr>
+					<td>06:41</td>
+					<td>06:41</td>
+				</tr>
+				<tr>
+					<td>07:40</td>
+					<td>07:40</td>
+				</tr>
+				<tr>
+					<td>09:47</td>
+					<td>09:47</td>
+				</tr>
+				<tr>
+					<td>10:42</td>
+					<td>10:42</td>
+				</tr>
+				<tr>
+					<td>12:10</td>
+					<td>12:10</td>
+				</tr>
+				<tr>
+					<td>13:28</td>
+					<td>13:28</td>
+				</tr>
+				<tr>
+					<td>15:06</td>
+					<td>15:06</td>
+				</tr>
+				<tr>
+					<td>16:19</td>
+					<td>16:19</td>
+				</tr>
+				<tr>
+					<td>17:26</td>
+					<td>17:26</td>
+				</tr>
+				<tr>
+					<td>18:41</td>
+					<td>18:41</td>
+				</tr>
+				<tr>
+					<td>19:33</td>
+					<td>19:33</td>
+				</tr>
+				<tr>
+					<td>20:24</td>
+					<td>20:44</td>
+				</tr>
+				<tr>
+					<td>23:25</td>
+					<td>23:25</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule6"> <!--Sudirman-->
+				<tr>
+					<td colspan="2">From SUDIRMAN</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:50</td>
+					<td>05:30</td>
+				</tr>
+				<tr>
+					<td>06:49</td>
+					<td>06:28</td>
+				</tr>
+				<tr>
+					<td>07:48</td>
+					<td>07:27</td>
+				</tr>
+				<tr>
+					<td>09:53</td>
+					<td>09:34</td>
+				</tr>
+				<tr>
+					<td>10:48</td>
+					<td>10:27</td>
+				</tr>
+				<tr>
+					<td>12:18</td>
+					<td>11:55</td>
+				</tr>
+				<tr>
+					<td>13:34</td>
+					<td>13:14</td>
+				</tr>
+				<tr>
+					<td>15:14</td>
+					<td>14:52</td>
+				</tr>
+				<tr>
+					<td>16:25</td>
+					<td>16:07</td>
+				</tr>
+				<tr>
+					<td>17:49</td>
+					<td>17:13</td>
+				</tr>
+				<tr>
+					<td>18:49</td>
+					<td>18:25</td>
+				</tr>
+				<tr>
+					<td>19:49</td>
+					<td>19:22</td>
+				</tr>
+				<tr>
+					<td>20:30</td>
+					<td>20:10</td>
+				</tr>
+				<tr>
+					<td>23:33</td>
+					<td>23:06</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule7"> <!--Tanah Abang-->
+				<tr>
+					<td colspan="2">From TANAH ABANG</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>05:54</td>
+					<td>05:22</td>
+				</tr>
+				<tr>
+					<td>06:53</td>
+					<td>06:20</td>
+				</tr>
+				<tr>
+					<td>07:53</td>
+					<td>07:19</td>
+				</tr>
+				<tr>
+					<td>09:57</td>
+					<td>09:20</td>
+				</tr>
+				<tr>
+					<td>10:52</td>
+					<td>10:13</td>
+				</tr>
+				<tr>
+					<td>12:22</td>
+					<td>11:47</td>
+				</tr>
+				<tr>
+					<td>13:38</td>
+					<td>13:06</td>
+				</tr>
+				<tr>
+					<td>15:18</td>
+					<td>14:44</td>
+				</tr>
+				<tr>
+					<td>16:29</td>
+					<td>15:48</td>
+				</tr>
+				<tr>
+					<td>17:53</td>
+					<td>17:00</td>
+				</tr>
+				<tr>
+					<td>18:53</td>
+					<td>18:12</td>
+				</tr>
+				<tr>
+					<td>19:54</td>
+					<td>19:09</td>
+				</tr>
+				<tr>
+					<td>20:34</td>
+					<td>20:02</td>
+				</tr>
+				<tr>
+					<td>23:37</td>
+					<td>22:58</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule8"> <!--Duri-->
+				<tr>
+					<td colspan="2">From DURI</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>06:03</td>
+					<td>05:18</td>
+				</tr>
+				<tr>
+					<td>07:03</td>
+					<td>06:16</td>
+				</tr>
+				<tr>
+					<td>08:02</td>
+					<td>07:15</td>
+				</tr>
+				<tr>
+					<td>10:06</td>
+					<td>09:16</td>
+				</tr>
+				<tr>
+					<td>11:02</td>
+					<td>10:09</td>
+				</tr>
+				<tr>
+					<td>12:31</td>
+					<td>11:43</td>
+				</tr>
+				<tr>
+					<td>13:47</td>
+					<td>13:02</td>
+				</tr>
+				<tr>
+					<td>15:27</td>
+					<td>14:40</td>
+				</tr>
+				<tr>
+					<td>16:38</td>
+					<td>15:44</td>
+				</tr>
+				<tr>
+					<td>18:02</td>
+					<td>16:56</td>
+				</tr>
+				<tr>
+					<td>19:02</td>
+					<td>18:08</td>
+				</tr>
+				<tr>
+					<td>20:03</td>
+					<td>19:05</td>
+				</tr>
+				<tr>
+					<td>20:43</td>
+					<td>19:58</td>
+				</tr>
+				<tr>
+					<td>23:46</td>
+					<td>22:54</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+			<table id="schedule9"> <!--Angke-->
+				<tr>
+					<td colspan="2">From ANGKE</td>
+				</tr>
+				<tr>
+					<td class="header">Towards<br>ANGKE</td>
+					<td class="header">Towards<br>BOGOR</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>04:40</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>05:42</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>06:45</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>08:44</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>09:43</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>11:05</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>12:30</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>13:53</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>15:10</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>16:25</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>17:40</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>18:38</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>19:32</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>22:28</td>
+				</tr>
+				<tr>
+					<td>++++++++++++++</td>
+					<td>++++++++++++++</td>
+				</tr>
+			</table>
+	</body>
+</html>

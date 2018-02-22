@@ -1,0 +1,268 @@
+#landing-wrapper {
+  display: table;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(subway.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  color: white;
+}
+h1 {
+	color: white;
+	text-align: center;
+	font-family: futura hv bt;
+	font-size : 60pt;
+	font-weight: bold;
+	}
+h1.a {
+	line-height: 0%;
+	padding-top : 180;;
+	font-family: futura bdcn bt;
+	}
+h1.b {
+	line-height: 0%;
+	padding-top : 50;;
+	}
+h2 {
+	color: white;
+	font-family: futura hv bt;
+	font-size : 40pt;
+	padding-top : 20;
+	margin-top: 50;
+	}
+h3 {
+	color: white;
+	font-family: futura hv bt;
+	font-size : 25pt;
+	padding-left: 25;
+	text-align: center;
+	}
+h3.departure {
+	line-height: 1;
+}
+h5 {
+	color: white;
+	font-family: futura hv bt;
+	font-size : 10pt;
+	text-align: center;
+	font-style: italic;
+}
+body {
+	background-image: url(subway.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	}
+body.tj {
+	background-image: url(tj.jpg);
+}
+body.krl {
+	background-image: url(krl.jpg);
+}
+p {
+	color: white;
+	font-family: futura hv bt;
+	padding-right: 50;
+	padding-left: 50;
+	font-style: italic;
+	}
+p.a {
+	font-size: 20pt;
+	text-align: center;
+	}
+p.b {
+	font-size: 15pt;
+	}
+a.links {
+	text-decoration: none;
+	color: #ffffff;
+	}
+table {
+	color: white;
+	font-family: futura;
+	font-size: 10pt;
+	font-style: bold;
+	text-decoration: none;
+	text-align: center;
+	}
+a.table {
+	color: white;
+	text-decoration: none;
+	}
+#primary_nav_wrap ul
+{
+	z-index: 999;
+	list-style:none;
+	padding:0 30;
+	margin: 0;
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+	color:#ffffff;
+	text-decoration:none;
+	font-size:22px;
+	line-height:35px;
+	padding:30 30px;
+	font-family: futura bdcn bt;
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:#000000
+}
+
+#primary_nav_wrap ul li:hover
+{
+	background:#1c1e1e
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	background:#000000;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:360px	
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}
+hr {
+	width: 100%;
+	height: 20;
+}
+hr.a {
+	border-color: blue;
+	background-color: blue;
+}
+hr.b {
+	border-color: pink;
+	background-color: pink;
+}
+hr.c {
+	border-color: red;
+	background-color: red;
+}
+hr.d {
+	border-color: lime;
+	background-color: lime;
+}
+hr.e {
+	border-color: gold;
+	background-color: gold;
+}
+
+div.relative {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    left: 380px;
+    bottom: 303px;
+} 
+#mymap {
+	float: right;
+	margin-top: 490px;
+	margin-right: 60px;
+	width: 700px;
+	height: 450px;
+	position: relative;
+    bottom: 450px;
+}
+td.header {
+	color: white;
+	font-family: futura hv bt;
+	font-size : 30pt;
+}
+td {
+	height: 30px;
+}
+#schedule1 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule2 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule3 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule4 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule5 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule6 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule7 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule8 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+#schedule9 {
+	width: 100%;
+	display: none;
+	margin-top: 30px;
+}
+td {
+	color: white;
+	font-family: futura hv bt;
+	font-size : 15pt;
+}
+.button {
+    background-color: #ff8300; /* orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: futura hv bt;
+}
